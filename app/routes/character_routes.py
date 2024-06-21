@@ -3,7 +3,14 @@ from ..db import db
 from ..models.character import Character
 from ..models.greeting import Greeting
 from sqlalchemy import func, union, except_
+from openai import OpenAI
+import os
 
+client = OpenAI()
+client2 = client = OpenAI(
+api_key = os.environ.get("OPENAI_API_KEY"),
+base_url = "https://api.llama-api.com"
+)
 
 bp = Blueprint("characters", __name__, url_prefix="/characters")
 

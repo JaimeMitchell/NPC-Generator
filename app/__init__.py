@@ -4,6 +4,7 @@ from .routes.character_routes import bp
 from .db import db, migrate
 from .models import character, greeting
 
+
 def create_app(test_config=None):
     app = Flask(__name__)
 
